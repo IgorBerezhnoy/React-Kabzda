@@ -7,17 +7,13 @@ type AccordionPropsType = {
 
 export function Accordion(props: AccordionPropsType) {
     console.log('Accordion is rending');
-    if (props.collapsed){
-        return <div>
-            <AccordionTitle title={props.titleValue}/>
-            <AccordionBody/>
-        </div>;
-    }else {
-        return <div>
-            <AccordionTitle title={props.titleValue}/>
-        </div>;
-    }
+    return <div>
+        <AccordionTitle title={props.titleValue}/>
+        {!props.collapsed&&<AccordionBody/>}
+    </div>;
+
 }
+
 
 type AccordionTitlePropsType = {
     title: string
