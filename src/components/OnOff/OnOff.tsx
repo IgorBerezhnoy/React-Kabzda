@@ -3,7 +3,7 @@ import './OnOff.css';
 type OnOffPropsType = {
     on: boolean
 }
-
+//
 export function OnOff(props: OnOffPropsType) {
     if (props.on) {
         return (
