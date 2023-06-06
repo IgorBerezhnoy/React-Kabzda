@@ -4,6 +4,7 @@ type RatingPropsType = 0 | 1 | 2 | 3 | 4 | 5
 
 type StarPropsType={
     selected:boolean
+    callBack:()=>void
 }
 
 export function UncontrolledRating () {
@@ -16,22 +17,23 @@ export function UncontrolledRating () {
     console.log('Rating is rending');
     return (
         <div>
-            <Star selected={value>=1}/><button onClick={()=>onClickButtonHandler(1)}>1</button>
-            <Star selected={value>=2}/><button onClick={()=>onClickButtonHandler(2)}>2</button>
-            <Star selected={value>=3}/><button onClick={()=>onClickButtonHandler(3)}>3</button>
-            <Star selected={value>=4}/><button onClick={()=>onClickButtonHandler(4)}>4</button>
-            <Star selected={value>=5}/><button onClick={()=>onClickButtonHandler(5)}>5</button>
+            {/*<Star selected={value>=1} callBack={onClickButtonHandler}/>*/}
+            {/*<button onClick={()=>onClickButtonHandler(1)}>1</button>*/}
+            <Star selected={value>=1} callBack={()=>onClickButtonHandler(1)}/>
+            <Star selected={value>=2} callBack={()=>onClickButtonHandler(2)}/>
+            <Star selected={value>=3} callBack={()=>onClickButtonHandler(3)}/>
+            <Star selected={value>=4} callBack={()=>onClickButtonHandler(4)}/>
+            <Star selected={value>=5} callBack={()=>onClickButtonHandler(5)}/>
+            {/*<Star selected={value>=6} callBack={()=>onClickButtonHandler(6)}/>*/}
+            {/*<Star selected={value>=3}/><button onClick={()=>onClickButtonHandler(3)}>3</button>*/}
+            {/*<Star selected={value>=4}/><button onClick={()=>onClickButtonHandler(4)}>4</button>*/}
+            {/*<Star selected={value>=5}/><button onClick={()=>onClickButtonHandler(5)}>5</button>*/}
         </div>
     );
 }
 
 function Star(props: StarPropsType) {
     console.log('star rending');
-    if (props.selected) {
-        return (<span><b>Star</b> </span>);
-    } else {
-        return (<span>Star</span>);
-    }
+   return  props.selected ? <span onClick={props.callBack}><b>Star</b></span>:<span onClick={props.callBack}>Star</span>
 
-    ;
 }
