@@ -27,7 +27,7 @@ export function OnOff(props:propsType) {
         border: '1px solid black ',
         display: 'inline-block',
         padding: '2px',
-        backgroundColor: props.on ? 'green' : 'white'
+        backgroundColor: props.on ? 'greenyellow' : 'white'
 
     };
     const offStyle = {
@@ -48,7 +48,7 @@ export function OnOff(props:propsType) {
         display: 'inline-block',
         marginLeft: '5px',
         padding: '2px',
-        backgroundColor: props.on ? 'green' : 'red'
+        backgroundColor: props.on ? 'greenyellow' : 'red'
 
     };
     return <div>

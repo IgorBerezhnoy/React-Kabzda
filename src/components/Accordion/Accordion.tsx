@@ -13,7 +13,7 @@ export function Accordion(props: AccordionPropsType) {
         {!props.collapsed&&<AccordionBody/>}
     </div>;
 
-}
+} 
 
 
 type AccordionTitlePropsType = {

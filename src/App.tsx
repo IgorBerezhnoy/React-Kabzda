@@ -20,12 +20,12 @@ function App() {
             Article 1
             <Rating value={3}/>*/}
              {/*  <Accordion titleValue={'Menu'} collapsed={collapsed} setCollapsed={setCollapsed}/>*/}
-            {/*<Accordion titleValue={'Users'} collapsed={collapsed} setCollapsed={setCollapsed}/>*/}
+            <Accordion titleValue={'Users'} collapsed={collapsed} setCollapsed={setCollapsed}/>
 
             {/*<Rating value={ratingValue} onClick={setRatingValue} />*/}
 
-            <OnOff on={on} setOn={setOn}/>
-            {/*<SelfControlledAccordion titleValue={"Menu"}/>*/}
+            <OnOff on={on} setOn={setOn}/> {on.toString()}
+            <SelfControlledAccordion titleValue={"Menu"}/>
             {/*<SelfControlledAccordion titleValue={"Users"}/>*/}
             {/*<UncontrolledRating />*/}
             {/*<UncontrolledRating />*/}
