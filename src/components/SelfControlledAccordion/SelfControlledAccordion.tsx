@@ -6,17 +6,18 @@ type AccordionPropsType = {
 }
 
 export function SelfControlledAccordion(props: AccordionPropsType) {
-    let [collapsed,setCollapsed]=useState(true)
+
+    let [collapsed, setCollapsed] = useState(true);
 
     const OnClickHandler = () => {
-           setCollapsed(!collapsed)
+        setCollapsed(!collapsed);
 
-    }
+    };
 
     console.log('Accordion is rending');
     return <div>
         <AccordionTitle title={props.titleValue} callBack={OnClickHandler}/>
-        {!collapsed&&<AccordionBody/>}
+        {!collapsed && <AccordionBody/>}
     </div>;
 
 }
@@ -24,7 +25,7 @@ export function SelfControlledAccordion(props: AccordionPropsType) {
 
 type AccordionTitlePropsType = {
     title: string
-    callBack:()=>void
+    callBack: () => void
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {

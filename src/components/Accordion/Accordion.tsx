@@ -3,12 +3,13 @@ import React from 'react';
 type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
+    setCollapsed:(collapsed:boolean)=>void
 }
 
 export function Accordion(props: AccordionPropsType) {
     console.log('Accordion is rending');
     return <div>
-        <AccordionTitle title={props.titleValue}/>
+        <AccordionTitle title={props.titleValue} setCollapsed={()=>props.setCollapsed(!props.collapsed)}/>
         {!props.collapsed&&<AccordionBody/>}
     </div>;
 
@@ -17,10 +18,11 @@ export function Accordion(props: AccordionPropsType) {
 
 type AccordionTitlePropsType = {
     title: string
+    setCollapsed:()=>void
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
-    return (<h3>{props.title}</h3>);
+    return (<h3 onClick={props.setCollapsed}>{props.title}</h3>);
 }
 
 function AccordionBody() {
