@@ -5,11 +5,15 @@ type RatingPropsType = 0 | 1 | 2 | 3 | 4 | 5
 type StarPropsType = {
     selected: boolean
     SetValue: () => void
-    value?:RatingPropsType
 }
 
-export function UncontrolledRating() {
-    let [value, SetValue] = useState<RatingPropsType>(0);
+type PropsType = {
+    defaultValue: RatingPropsType
+    onChange: (value: RatingPropsType) => void
+}
+
+export function UncontrolledRating(props: PropsType) {
+    let [value, SetValue] = useState<RatingPropsType>(props.defaultValue ? props.defaultValue : 0);
 
     const onClickButtonHandler = (value: RatingPropsType) => {
         SetValue(value);
@@ -21,11 +25,12 @@ export function UncontrolledRating() {
             {/*<Star selected={value>=1} callBack={onClickButtonHandler}/>*/}
             {/*<button onClick={()=>onClickButtonHandler(1)}>1</button>*/}
 
-            <Star selected={value >= 1} SetValue={()=>SetValue (1)} />
-            <Star selected={value >= 2} SetValue={()=>SetValue (2)} />
-            <Star selected={value >= 3} SetValue={()=>SetValue(3)} />
-            <Star selected={value >= 4} SetValue={()=>SetValue(4)} />
-            <Star selected={value >= 5} SetValue={()=>SetValue(5)} />
+            <Star selected={value >= 1} SetValue={() => SetValue(1)}/>
+            <Star selected={value >= 2} SetValue={() => SetValue(2)}/>
+            <Star selected={value >= 3} SetValue={() => SetValue(3)}/>
+            <Star selected={value >= 4} SetValue={() => SetValue(4)}/>
+            <Star selected={value >= 5} SetValue={() => SetValue(5)}/>
+
 
             {/*    <Star selected={value>=1} callBack={()=>onClickButtonHandler(1)}/>
             <Star selected={value>=2} callBack={()=>onClickButtonHandler(2)}/>
