@@ -25,12 +25,11 @@ export function UncontrolledRating(props: PropsType) {
             {/*<Star selected={value>=1} callBack={onClickButtonHandler}/>*/}
             {/*<button onClick={()=>onClickButtonHandler(1)}>1</button>*/}
 
-            <Star selected={value >= 1} SetValue={() => SetValue(1)}/>
-            <Star selected={value >= 2} SetValue={() => SetValue(2)}/>
-            <Star selected={value >= 3} SetValue={() => SetValue(3)}/>
-            <Star selected={value >= 4} SetValue={() => SetValue(4)}/>
-            <Star selected={value >= 5} SetValue={() => SetValue(5)}/>
-
+            <Star selected={value >= 1} SetValue={() =>{ SetValue(1); props.onChange(1)}}/>
+            <Star selected={value >= 2} SetValue={() =>{ SetValue(2); props.onChange(1)}}/>
+            <Star selected={value >= 3} SetValue={() =>{ SetValue(3); props.onChange(1)}}/>
+            <Star selected={value >= 4} SetValue={() =>{ SetValue(4); props.onChange(1)}}/>
+            <Star selected={value >= 5} SetValue={() =>{ SetValue(5); props.onChange(1)}}/>
 
             {/*    <Star selected={value>=1} callBack={()=>onClickButtonHandler(1)}/>
             <Star selected={value>=2} callBack={()=>onClickButtonHandler(2)}/>

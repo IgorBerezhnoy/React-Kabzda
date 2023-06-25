@@ -13,10 +13,10 @@ export default {
 const callback=action("Rating changed")
 
 export const ChangeRating1 = () => <UncontrolledRating defaultValue={1} onChange={callback}/>
-export const ChangeRating2 = () => <UncontrolledRating defaultValue={2} />
-export const ChangeRating3 = () => <UncontrolledRating defaultValue={3}/>
-export const ChangeRating4 = () => <UncontrolledRating defaultValue={4}/>
-export const ChangeRating5 = () => <UncontrolledRating defaultValue={5}/>
+export const ChangeRating2 = () => <UncontrolledRating defaultValue={2} onChange={callback} />
+export const ChangeRating3 = () => <UncontrolledRating defaultValue={3} onChange={callback}/>
+export const ChangeRating4 = () => <UncontrolledRating defaultValue={4} onChange={callback}/>
+export const ChangeRating5 = () => <UncontrolledRating defaultValue={5} onChange={callback}/>
 
 
 // export const Button = ({
