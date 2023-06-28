@@ -29,11 +29,41 @@ export const GetValueOfUncontrolledInputByButtonPress = () => {
         setValue(el.value);
 
     };
-    return <div><input ref={inputRef} />
+    return <div><input ref={inputRef}/>
         <button onClick={onClockButtonHandler}>save
         </button>
         -actual value: {value} </div>;
 };
+
+export const ControlledInput = () => {
+    const [parentValue, setParentValue] = useState<string>('');
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setParentValue(e.currentTarget.value);
+    };
+    return (<input value={parentValue} onChange={onChangeHandler} />)
+};
+
+
+export const ControlledCheckBox = () => {
+    const [parentValue, setParentValue] = useState<boolean>(false);
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setParentValue(e.currentTarget.checked);
+    };
+    return (<input type={"checkbox"} checked={parentValue} onChange={onChangeHandler} />)
+};
+export const ControlledSelect = () => {
+    const [parentValue, setParentValue] = useState<string|undefined>("3");
+    const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
+        setParentValue(e.currentTarget.value);
+    };
+    return (
+        <select value={parentValue} onChange={onChangeHandler}>
+            <option>none</option>
+            <option value={"1"}>Minsk</option>
+            <option value={"2"}>Moscow</option>
+            <option value={"3"}>Kiev</option>
+        </select>
+    )};
 
 export const ControlledInputWithFixValue = () => {
     return <input value={'it-incubator'}/>;
