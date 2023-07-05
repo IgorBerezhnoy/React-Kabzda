@@ -1,0 +1,32 @@
+.select {
+    margin: 5px;
+}
+
+.select span.main {
+    border: solid black 1px;
+    width: 100px;
+    margin: 10px;
+    padding: 5px;
+    display: inline-block;
+    min-height: 10px;
+
+}
+
+.items :hover {
+    background-color: #1ea7fd;
+    color: white;
+}
+
+.items {
+
+    position: absolute;
+    border: solid black 1px;
+    height: auto;
+    padding: 5px;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+.ItemActive{
+    background-color: #1ea7fd;
+    color: white;
+}
