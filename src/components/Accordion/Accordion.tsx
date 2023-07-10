@@ -12,6 +12,8 @@ export type AccordionPropsType = {
     items: ItemType[]
     onClick: (value: any) => void
 }
+const AccordionTitle = React.memo(AccordionTitleMemo);
+const AccordionBody = React.memo(AccordionBodyMemo);
 
 export function Accordion(props: AccordionPropsType) {
     console.log('Accordion is rending');
@@ -22,13 +24,12 @@ export function Accordion(props: AccordionPropsType) {
 
 }
 
-
 type AccordionTitlePropsType = {
     title: string
     setCollapsed: () => void
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+function AccordionTitleMemo(props: AccordionTitlePropsType) {
     return (<h3 onClick={props.setCollapsed}>{props.title}</h3>);
 }
 
@@ -37,7 +38,7 @@ export type AccordionBodyPropsType = {
     onClick: (value: any) => void
 }
 
-function AccordionBody(props: AccordionBodyPropsType) {
+function AccordionBodyMemo(props: AccordionBodyPropsType) {
     return (
         <ul> {props.items.map((el, index) => {
             const onClickHandler = () => {
