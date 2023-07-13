@@ -1,5 +1,5 @@
 import React, {useReducer} from 'react';
-import {reducer, TOGGLE_CONSTANT} from './Reducer';
+import {reducer, TOGGLE_COLLAPSED} from './Reducer';
 
 type AccordionPropsType = {
     titleValue: string
@@ -12,7 +12,7 @@ export function SelfControlledAccordion(props: AccordionPropsType) {
 
     const OnClickHandler = () => {
         // setCollapsed(!collapsed);
-        dispatch({type: TOGGLE_CONSTANT});
+        dispatch({type: TOGGLE_COLLAPSED});
 
     };
 
