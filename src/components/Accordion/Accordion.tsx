@@ -12,8 +12,8 @@ export type AccordionPropsType = {
     items: ItemType[]
     onClick: (value: any) => void
 }
-const AccordionTitle = React.memo(AccordionTitleMemo);
-const AccordionBody = React.memo(AccordionBodyMemo);
+const AccordionTitle=React.memo(AccordionTitleMemo)
+const AccordionBody=React.memo(AccordionBodyMemo)
 
 export function Accordion(props: AccordionPropsType) {
     console.log('Accordion is rending');
@@ -23,6 +23,7 @@ export function Accordion(props: AccordionPropsType) {
     </div>;
 
 }
+
 
 type AccordionTitlePropsType = {
     title: string
