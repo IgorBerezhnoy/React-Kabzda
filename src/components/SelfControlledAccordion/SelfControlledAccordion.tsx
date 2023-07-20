@@ -1,23 +1,27 @@
-import React, {useState} from 'react';
+import React, {useReducer} from 'react';
+import {reducer} from './Reducer';
 
 type AccordionPropsType = {
     titleValue: string
 
 }
 
+
 export function SelfControlledAccordion(props: AccordionPropsType) {
 
-    let [collapsed, setCollapsed] = useState(true);
+    // let [collapsed, setCollapsed] = useState(true);
+    let [state, dispatch] = useReducer(reducer, {collapsed: true});
 
     const OnClickHandler = () => {
-        setCollapsed(!collapsed);
+        dispatch({type: 'TOGGLE_COLLAPSED'});
 
     };
 
     console.log('Accordion is rending');
     return <div>
+        {/*<AccordionTitle title={props.titleValue} callBack={OnClickHandler}/>       */}
         <AccordionTitle title={props.titleValue} callBack={OnClickHandler}/>
-        {!collapsed && <AccordionBody/>}
+        {!state.collapsed && <AccordionBody/>}
     </div>;
 
 }
