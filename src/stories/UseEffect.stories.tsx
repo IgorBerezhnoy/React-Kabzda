@@ -34,3 +34,22 @@ export const SimpleExample = () => {
 
     </>;
 };
+
+export const SetTimeOutExample = () => {
+    console.log('SimpleExample');
+    const [counter, setCounter] = useState(1);
+    const [fake, setFake] = useState(1);
+    useEffect(() => {
+  setInterval(()=>{
+      console.log("setInterval");
+      setCounter((state)=>state+1)
+      },1000)
+    },[] );
+
+
+    return <>
+
+<hr/>
+        Time:1<time>{counter}</time>
+    </>;
+};
