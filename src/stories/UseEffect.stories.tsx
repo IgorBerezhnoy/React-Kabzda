@@ -10,46 +10,59 @@ export const SimpleExample = () => {
     console.log('SimpleExample');
     const [counter, setCounter] = useState(1);
     const [fake, setFake] = useState(1);
+
     useEffect(() => {
-        console.log('everyTime');
-        document.title = counter.toString();
-    } );
-    useEffect(() => {
-        console.log('oneTime');
-        document.title = counter.toString();
+        console.log('one time');
+
     }, []);
     useEffect(() => {
-        console.log('onlyCounter');
+        console.log('everyTime');
+    });
+    useEffect(() => {
+        console.log('useEffect wit only counter');
         document.title = counter.toString();
     }, [counter]);
 
     const onClickHandler = () => {
         setCounter(counter + 1);
     };
+    const onClickHandler1 = () => {
+        setFake(fake + 1);
+    };
     return <>
         counter:{counter}
         <button onClick={onClickHandler}>+</button>
-        fake:{fake}
-        <button onClick={() => setFake(fake + 1)}>+</button>
-
+        Fake:{fake}
+        <button onClick={onClickHandler1}>+</button>
     </>;
 };
+
 
 export const SetTimeOutExample = () => {
     console.log('SimpleExample');
     const [counter, setCounter] = useState(1);
-    const [fake, setFake] = useState(1);
+    // const [fake, setFake] = useState(1);
+
+
     useEffect(() => {
-  setInterval(()=>{
-      console.log("setInterval");
-      setCounter((state)=>state+1)
-      },1000)
-    },[] );
+        console.log('useEffect wit only counter');
+        setInterval(() => {
+            console.log('setTimeout');
+            setCounter((state)=>state+1);
+        }, 1000);
+    }, []);
 
-
+    // const onClickHandler = () => {
+    //     setCounter(counter + 1);
+    // };
+    // const onClickHandler1 = () => {
+    //     setFake(fake + 1);
+    // };
     return <>
-
-<hr/>
-        Time:1<time>{counter}</time>
+        counter:{counter}
+        {/*<button onClick={onClickHandler}>+</button>*/}
+        {/*Fake:{fake}*/}
+        {/*<button onClick={onClickHandler1}>+</button>*/}
     </>;
 };
+
